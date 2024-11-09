@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE391">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Foto de Avatar -->
+        <ImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:contentDescription="Avatar"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="16dp" />
+        <!--android:src="@drawable/defaultprofile"-->
+        <!-- Botón para editar el avatar -->
+        <Button
+            android:id="@+id/btnEditarAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abrir Galeria"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp" />
+        <Button
+            android:id="@+id/btnActualizarAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Avatar"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp" />
+        <!-- DNI -->
+        <TextView
+            android:id="@+id/tvDni"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DNI:"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"/>
+
+        <!-- Apellido -->
+        <TextView
+            android:id="@+id/tvApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido:"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"/>
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"/>
+
+        <!-- Teléfono -->
+        <TextView
+            android:id="@+id/tvTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp"
+            android:textColor="#000000"/>
+
+        <!-- Email -->
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textSize="18sp"
+            android:layout_marginBottom="24dp"
+            android:textColor="#000000"/>
+
+        <!-- Botón para editar perfil -->
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editar Perfil"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            />
+        <Button
+            android:id="@+id/btnModificarClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar Clave"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            />
+
+    </LinearLayout>
+</ScrollView>

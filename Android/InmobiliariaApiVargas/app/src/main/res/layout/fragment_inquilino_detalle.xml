@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFE391">
+
+    <!-- Título DNI -->
+    <TextView
+        android:id="@+id/tvTituloDni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="DNI:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- DNI del inquilino -->
+    <TextView
+        android:id="@+id/tvDni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloDni"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Título Apellido -->
+    <TextView
+        android:id="@+id/tvTituloApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Apellido:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDni"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Apellido del inquilino -->
+    <TextView
+        android:id="@+id/tvApellido"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloApellido"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Título Nombre -->
+    <TextView
+        android:id="@+id/tvTituloNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvApellido"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Nombre del inquilino -->
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloNombre"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Título Dirección -->
+    <TextView
+        android:id="@+id/tvTituloDireccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Dirección:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dirección del inquilino -->
+    <TextView
+        android:id="@+id/tvDireccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloDireccion"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Título Teléfono -->
+    <TextView
+        android:id="@+id/tvTituloTelefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Teléfono:"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDireccion"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Teléfono del inquilino -->
+    <TextView
+        android:id="@+id/tvTelefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTituloTelefono"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

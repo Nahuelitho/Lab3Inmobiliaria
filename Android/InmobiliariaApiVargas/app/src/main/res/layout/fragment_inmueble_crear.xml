@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="#FFE391">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/ivFotoInmueble"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:background="#D3D3D3"
+            android:contentDescription="Foto del inmueble"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toTopOf="@+id/btnFotoCrear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:visibility="gone"
+            android:id="@+id/btnFotoCrear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:text="Seleccionar Foto"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+        <!-- Dirección -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Dirección"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese la dirección"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+
+        <!-- Ambientes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambientes"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+        <EditText
+            android:id="@+id/etAmbientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese la cantidad de ambientes"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+
+        <!-- Tipo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipo"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+        <EditText
+            android:id="@+id/etTipo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el tipo de inmueble"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+
+        <!-- Uso -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uso"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+        <EditText
+            android:id="@+id/etUso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el uso del inmueble"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+
+        <!-- Precio -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp"
+            android:textColor="#000000"/>
+        <EditText
+            android:id="@+id/etPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingrese el precio"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#7F7F7F"/>
+
+        <!-- Botón para guardar -->
+        <Button
+            android:id="@+id/btnGuardarInmueble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Guardar Inmueble" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_map">
+
+    <fragment
+        android:id="@+id/nav_inmueble"
+        android:name="com.softnahu.modelo.ui.inmueble.InmuebleFragment"
+        android:label="Lista Inmuebles"
+        tools:layout="@layout/fragment_inmueble" >
+        <action
+            android:id="@+id/action_nav_item_to_detalleItemFragment"
+            app:destination="@id/detalleItemFragment" />
+        <action
+            android:id="@+id/action_nav_inmueble_to_inmuebleCrearFragment"
+            app:destination="@id/inmuebleCrearFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.softnahu.modelo.ui.perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_nav_perfil_to_nav_editar_perfil"
+            app:destination="@id/editarPerfilFragment" />
+        <action
+            android:id="@+id/action_nav_perfil_to_modificarClaveFragment"
+            app:destination="@id/fragment_modificar_clave" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.softnahu.modelo.ui.perfil.EditarPerfilFragment"
+        android:label="Editar Perfil"
+        tools:layout="@layout/fragment_editar_perfil" />
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.softnahu.modelo.ui.mapa.MapFragment"
+        android:label="Mapa"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/nav_salir"
+        android:name="com.softnahu.modelo.ui.salir.SalirFragment"
+        android:label="Salir"
+        tools:layout="@layout/fragment_salir" />
+    <fragment
+        android:id="@+id/detalleItemFragment"
+        android:name="com.softnahu.modelo.ui.inmueble.DetalleItemFragment"
+        android:label="Detalle Inmueble"
+        tools:layout="@layout/fragment_detalle_inmueble" >
+
+        <action
+            android:id="@+id/action_detalleItemFragment_to_nav_inmueble"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/inmuebleCrearFragment"
+        android:name="com.softnahu.modelo.ui.inmueble.InmuebleCrearFragment"
+        android:label="Crear Inmueble"
+        tools:layout="@layout/fragment_inmueble_crear" >
+        <action
+            android:id="@+id/action_inmuebleCrearFragment_to_inmuebleFragment"
+            app:destination="@id/nav_inmueble" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inquilino"
+        android:name="com.softnahu.modelo.ui.inquilino.InquilinoFragment"
+        android:label="Lista Inmuebles Por Contrato"
+        tools:layout="@layout/fragment_inquilino">
+        <action
+            android:id="@+id/action_nav_inquilino_to_detalleInquilinoFragment"
+            app:destination="@id/detalleInquilinoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleInquilinoFragment"
+        android:name="com.softnahu.modelo.ui.inquilino.DetalleInquilinoFragment"
+        android:label="Informacion del Inquilino"
+        tools:layout="@layout/fragment_inquilino_detalle">
+        <action
+            android:id="@+id/action_detalleInquilinoFragment_to_nav_inquilino"
+            app:destination="@id/nav_inquilino" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_contrato"
+        android:name="com.softnahu.modelo.ui.contratos.ContratosFragment"
+        android:label="Contratos"
+        tools:layout="@layout/fragment_contratos">
+        <action
+            android:id="@+id/action_nav_contrato_to_detalle_contrato"
+            app:destination="@id/detalle_contrato" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detalle_contrato"
+        android:name="com.softnahu.modelo.ui.contratos.ContratoDetalleFragment"
+        android:label="Detalle del contrato"
+        tools:layout="@layout/fragment_contrato_detalle">
+        <action
+            android:id="@+id/action_detalle_contrato_to_nav_contrato"
+            app:destination="@id/nav_contrato" />
+        <action
+            android:id="@+id/action_detalle_contrato_to_pagosFragment"
+            app:destination="@id/pagosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pagosFragment"
+        android:name="com.softnahu.modelo.ui.pago.PagosFragment"
+        android:label="Detalle del Pago"
+        tools:layout="@layout/fragment_pagos">
+        <action
+            android:id="@+id/action_pagosFragment_to_detalle_contrato"
+            app:destination="@id/detalle_contrato" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_modificar_clave"
+        android:name="com.softnahu.modelo.ui.perfil.ModificarClaveFragment"
+        android:label="Cambiar Clave"
+        tools:layout="@layout/fragment_modificar_clave">
+        <action
+            android:id="@+id/action_modificarClaveFragment_to_nav_perfil"
+            app:destination="@id/nav_perfil" />
+    </fragment>
+
+</navigation>
