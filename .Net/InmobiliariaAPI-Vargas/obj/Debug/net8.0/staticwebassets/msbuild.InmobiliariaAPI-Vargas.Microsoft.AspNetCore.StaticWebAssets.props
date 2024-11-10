@@ -48,5 +48,21 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>InmobiliariaAPI-Vargas</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/InmobiliariaAPI-Vargas</BasePath>
+      <RelativePath>avatarPerfil/a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

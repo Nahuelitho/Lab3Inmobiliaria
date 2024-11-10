@@ -5,6 +5,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -21,9 +22,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivityViewModel extends AndroidViewModel {
+    private Context context;
+
     private MutableLiveData<String> mUsuario;
     public LoginActivityViewModel(@NonNull Application application) {
         super(application);
+        context = application.getApplicationContext();
     }
 
     public LiveData<String> getUsuario(){
@@ -72,6 +76,37 @@ public class LoginActivityViewModel extends AndroidViewModel {
             public void onFailure(Call<String> call, Throwable throwable) {
                 Log.e("salida", "Error del servidor: " + throwable.getMessage());
                 mUsuario.setValue("Error en la conexión");
+            }
+        });
+    }
+    public void llamarRestaurarClave(String email){
+        if (email.isEmpty()) {
+            Toast.makeText(context, "Por favor, ingrese el email que desea restablecer.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        // Validar que el usuario tenga formato de email valido
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(context, "El formato del correo no es válido.", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Call<String> llamada = ApiClient.getApiInmobiliaria().recuperarClave(email);
+
+        llamada.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                String token = response.body();
+                if(response.isSuccessful() && token != null){
+                    Toast.makeText(context, "Email de restablecimiento enviado con exito, revise su correo electronico.", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(context, "Error: el correo no esta registrado.", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable throwable) {
+                Toast.makeText(context, "Error en conexion", Toast.LENGTH_LONG).show();
             }
         });
     }

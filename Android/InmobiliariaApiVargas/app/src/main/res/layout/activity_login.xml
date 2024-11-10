@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="176dp"
-        android:text="Usuario"
+        android:text="Email"
         android:textSize="24sp"
         android:textColor="#000000" />
 
@@ -44,9 +44,9 @@
         android:layout_marginTop="224dp"
         android:color="#000000"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="Email"
         android:inputType="text"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textColor="#000000"
         android:textColorHint="#7F7F7F"/>
 
@@ -71,7 +71,7 @@
         android:color="#000000"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textColor="#000000"
         android:textColorHint="#7F7F7F"/>
 
@@ -86,18 +86,15 @@
         android:radius="36dp"
         android:color="#000000"
         android:textColor="#FFFFFF" />
-    <TextView
-        android:id="@+id/tvRecuperarContraseña"
+    <Button
+        android:id="@+id/btnRecuperarClave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="525dp"
         android:text="¿Olvidaste tu contraseña?"
-        android:textSize="16sp"
+        android:textSize="14dp"
         android:textColor="#4C4CFF"
-        android:clickable="true"
-        android:focusable="true"
-        android:textStyle="bold"
     />
 
 </FrameLayout>

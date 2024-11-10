@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AZ9SMVQsZ/5S4JIJK8rtFebcfgfIQreUuLk4egz5buQ=",
+  "Hash": "iWOe4ayGC6AvjjXZFAFSxEKgJuGL9/eMS1uLvRZgBNk=",
   "Source": "InmobiliariaAPI-Vargas",
   "BasePath": "_content/InmobiliariaAPI-Vargas",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\avatarPerfil\\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg",
+      "SourceId": "InmobiliariaAPI-Vargas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\",
+      "BasePath": "_content/InmobiliariaAPI-Vargas",
+      "RelativePath": "avatarPerfil/a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg"
     }
   ]
 }

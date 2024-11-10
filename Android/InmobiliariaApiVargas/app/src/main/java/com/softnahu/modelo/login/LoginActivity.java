@@ -41,6 +41,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        binding.btnRecuperarClave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vm.llamarRestaurarClave(binding.etUsuario.getText().toString());
+            }
+        });
+
 
 
     }

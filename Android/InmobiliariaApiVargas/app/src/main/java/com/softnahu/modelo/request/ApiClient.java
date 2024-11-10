@@ -101,7 +101,11 @@ public class ApiClient {
                 @Field("ContraseñaNueva") String contraseñaNueva,
                 @Field("RepetirContraseña") String repetirContraseña
         );
-
+        @FormUrlEncoded
+        @POST("propietarios/recuperarClave")
+        Call<String> recuperarClave(
+                @Field("email") String email
+        );
         //--------INMUEBLES--------
         @GET("inmuebles/listaInmuebles")
         Call<List<Inmueble>> getInmuebles(@Header("Authorization") String token);

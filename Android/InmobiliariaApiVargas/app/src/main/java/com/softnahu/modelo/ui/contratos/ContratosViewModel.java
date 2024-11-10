@@ -3,6 +3,7 @@ package com.softnahu.modelo.ui.contratos;
 import android.app.Application;
 import android.content.Context;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -71,6 +72,7 @@ public class ContratosViewModel extends AndroidViewModel {
                 Toast.makeText(context, "Error de conexión al API", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         // Este log no tiene acceso a inmueblesList directamente, ya que este se define dentro del onResponse.
         // Si deseas imprimir el valor de mInmueblesXContrato fuera de la llamada, utiliza un observador en la vista.

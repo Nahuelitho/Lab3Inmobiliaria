@@ -4,8 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-
-using System.Text;
+using InmobiliariaAPI_Vargas.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
@@ -38,6 +37,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     
 // Agregar servicios a la aplicación
 builder.Services.AddControllers();
+builder.Services.AddTransient<EmailService>();
 /*
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

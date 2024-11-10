@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\avatarPerfil\\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg"
     },
     {
+      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg",
+      "PackagePath": "staticwebassets\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.InmobiliariaAPI-Vargas.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

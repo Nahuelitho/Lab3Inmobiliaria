@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using InmobiliariaAPI_Vargas.Models;
+using InmobiliariaAPI_Vargas.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
@@ -12,6 +13,8 @@ using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
+
+
 
 using System.Text;
 //
@@ -26,13 +29,16 @@ namespace InmobiliariaAPI_Vargas.Controllers
 
         private readonly IWebHostEnvironment _environment;
 
+        private readonly EmailService _emailService;
+
         private readonly IConfiguration _configuration;
-        public PropietariosController(BDContext context, IConfiguration configuration, IWebHostEnvironment environment)
+        public PropietariosController(BDContext context, IConfiguration configuration, IWebHostEnvironment environment, EmailService emailService)
         {
             _environment = environment;
             _context = context;
             _configuration = configuration;
             _passwordHasher = new PasswordHasher<Propietario>();
+            _emailService = emailService;
         }
 
 
@@ -327,12 +333,192 @@ namespace InmobiliariaAPI_Vargas.Controllers
                 return BadRequest("Error al cambiar la contraseña: " + ex.Message);
             }
         }
+
+
+        //////////////////////////////////////////////////////////////////////////////
+        [HttpPost("recuperarClave")]
+        [AllowAnonymous]
+        public async Task<IActionResult> RecuperarClave([FromForm] string email)
+        {
+            try
+            {
+                // Buscar al propietario por email
+                var propietario = await _context.Propietarios.FirstOrDefaultAsync(p => p.Mail == email);
+                if (propietario == null)
+                {
+                    return BadRequest("El correo no está registrado en la base de datos.");
+                }
+
+                if (propietario == null)
+                {
+                    return BadRequest("El correo electrónico no está registrado.");
+                }
+
+                // Generar el token JWT para restablecimiento de contraseña
+                var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["TokenAuthentication:SecretKey"]));
+                var credenciales = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, propietario.Mail),
+            new Claim("PropietarioId", propietario.Id.ToString()),
+            new Claim("Purpose", "PasswordReset") // Propósito del token
+        };
+
+
+
+                var token = new JwtSecurityToken(
+                    issuer: _configuration["TokenAuthentication:Issuer"],
+                    audience: _configuration["TokenAuthentication:Audience"],
+                    claims: claims,
+                    expires: DateTime.Now.AddMinutes(5), // Token válido por 5 minutos
+                    signingCredentials: credenciales
+                );
+
+                // Obtener el dominio o la IP
+                var dominio = _environment.IsDevelopment() ? HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString() : "www.misitio.com";
+
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+                // Contenido del correo de restablecimiento
+                var mensajeHtml = $@"
+                        <div style='font-family: Arial, sans-serif; color: #333; line-height: 1.5;'>
+                            <p style='margin-bottom: 16px;'>
+                                Si usted <strong>NO</strong> solicitó recuperar su contraseña en la App de la Inmobiliaria, ignore este correo. 
+                                Si desea continuar con la recuperación, haga clic en el siguiente enlace para establecer una nueva contraseña. 
+                                <strong>Va a recibir un nuevo email con su nueva contraseña</strong>.
+                            </p>
+                            <form action='http://{dominio}:5001/api/propietarios/confirmarRestaurarClave' method='POST'>
+                                <input type='hidden' name='token' value='{tokenString}'>
+                                <button type='submit' style='background-color: #007bff; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;'>
+                                    Recuperar contraseña
+                                </button>
+                            </form>
+                        </div>";
+
+                // Enviar el correo
+                await _emailService.EnviarCorreoAsync(email, "Recuperar contraseña", mensajeHtml);
+
+                return Ok("Correo de restablecimiento de contraseña enviado.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error al generar el token o enviar el correo: {ex.Message}");
+            }
+        }
+
+
+
+        //////////////////////////////////////////////////////////////////////////////
+        [HttpPost("confirmarRestaurarClave")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ConfirmarRestaurarClave([FromForm] string token)
+        {
+            try
+            {
+                // Validar el token
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_configuration["TokenAuthentication:SecretKey"]);
+
+                var tokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidIssuer = _configuration["TokenAuthentication:Issuer"],
+                    ValidAudience = _configuration["TokenAuthentication:Audience"]
+                };
+
+                var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken validatedToken);
+
+                // Extraer el Id del propietario del token
+                var idClaim = principal.FindFirst("PropietarioId");
+                if (idClaim == null)
+                {
+                    return BadRequest("Token no válido.");
+                }
+
+                // Verificar el formato del ID como un int
+                if (!int.TryParse(idClaim.Value, out int propietarioId))
+                {
+                    return BadRequest("Formato de ID no válido.");
+                }
+
+                // Buscar al propietario por Id
+                var propietario = await _context.Propietarios.FindAsync(propietarioId);
+                if (propietario == null)
+                {
+                    return BadRequest("El propietario no existe.");
+                }
+
+                // Generar una nueva clave aleatoria de 4 letras
+                string nuevaClave = GenerarClaveAleatoria(4);
+
+                // Hashear la nueva clave usando la misma lógica que en el método de login
+
+                string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                    password: nuevaClave,
+                    salt: Encoding.ASCII.GetBytes(_configuration["Salt"]),
+                    prf: KeyDerivationPrf.HMACSHA256,
+                    iterationCount: 10000,
+                    numBytesRequested: 256 / 8));
+                // Actualizar la clave en la base de datos
+                propietario.Password = hashed;
+                _context.Propietarios.Update(propietario);
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"Error al guardar la nueva contraseña: {ex.Message}");
+                }
+
+                // Contenido del correo de confirmación de restablecimiento
+                var mensajeHtml = $@"
+                        <table width='100%' style='font-family: Arial, sans-serif; color: #333333; line-height: 1.5;'>
+                            <tr>
+                                <td style='padding: 16px 0;'>
+                                    <p style='margin: 0 0 16px 0;'>
+                                        Su contraseña ha sido restablecida. La nueva contraseña es: 
+                                        <strong style='color: #d9534f;'>{nuevaClave}</strong>.
+                                    </p>
+                                    <p style='margin: 0;'>
+                                        Puede <strong>Iniciar sesión</strong> y <strong>Modificarla</strong> desde su 
+                                        <strong>Menú &rarr; Perfil &rarr; Modificar Clave</strong>.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>";
+                // Enviar el correo
+                await _emailService.EnviarCorreoAsync(propietario.Mail, "Contraseña restablecida", mensajeHtml);
+
+                return Ok("Contraseña restablecida con éxito. Se ha enviado un correo con la nueva contraseña.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error al restablecer la contraseña: {ex.Message}");
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////////
+
+        public string GenerarClaveAleatoria(int longitud)
+        {
+            const string letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random random = new Random();
+
+            return new string(Enumerable.Repeat(letras, longitud)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
         //////////////////////////////////////////////////////////////////////////////
 
         private bool PropietarioExists(int id)
         {
             return _context.Propietarios.Any(e => e.Id == id);
         }
+        //////////////////////////////////////////////////////////////////////////////
 
     }
     public class CambiarContraseña
