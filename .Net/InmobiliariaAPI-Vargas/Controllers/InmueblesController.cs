@@ -124,7 +124,7 @@ namespace InmobiliariaAPI_Vargas.Controllers
                 return StatusCode(500, $"Error al guardar la imagen: {ex.Message}");
             }
         }
-        ///////////////////////////////////////////////////////
+        ////////////////////////CAMBIAR ESTADO DISPONIBILIDAD DEL INMUEBLE///////////////////////////////
         
         [Authorize]
         [HttpPut("modificarEstado")]
@@ -149,34 +149,7 @@ namespace InmobiliariaAPI_Vargas.Controllers
         }
 
         ///////////////////////////////////////////////////////
-        /*[HttpGet("inmueblesConContrato")]
-        public async Task<IActionResult> InmueblesConContrato()
-        {
-            var propietarioIdClaim = User.FindFirst("PropietarioId")?.Value;
-
-            if (string.IsNullOrEmpty(propietarioIdClaim) || !int.TryParse(propietarioIdClaim, out int propietarioIdInt))
-            {
-                return Unauthorized("Token no contiene un ID válido.");
-            }
-
-            var inmuebles = await _context.Inmueble
-                .Where(i => i.Id_Propietario == propietarioIdInt &&
-                            i.Contratos.Any(c => c.FechaTerminacion == null))
-                .Select(i => new
-                {
-                    Id = i.Id,
-                    Direccion = i.Direccion,
-                    Ambientes = i.Ambientes,
-                    Tipo = i.Tipo,
-                    Uso = i.Uso,
-                    Precio = i.Precio,
-                    Foto = i.Foto
-                })
-                .ToListAsync();
-
-            return Ok(inmuebles);
-        }*/
-        ///////////////////////////////////////////////////////
+        
     }
 
 }

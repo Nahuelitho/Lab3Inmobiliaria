@@ -8019,11 +8019,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
+      "projectUniqueName": "C:\\Users\\Nahu\\Desktop\\Lab3Final\\Lab3Inmobiliaria\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
       "projectName": "InmobiliariaAPI-Vargas",
-      "projectPath": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
+      "projectPath": "C:\\Users\\Nahu\\Desktop\\Lab3Final\\Lab3Inmobiliaria\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
       "packagesPath": "C:\\Users\\Nahu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\obj\\",
+      "outputPath": "C:\\Users\\Nahu\\Desktop\\Lab3Final\\Lab3Inmobiliaria\\.Net\\InmobiliariaAPI-Vargas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nahu\\AppData\\Roaming\\NuGet\\NuGet.Config"

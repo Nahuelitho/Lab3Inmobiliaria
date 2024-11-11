@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7ieBcqGiBaVvlKHSxNa0CwVFF08jtD7LPq3H+Ei7C8+9GCUbrWusXGfHS/cvrhaHLltgciqdgnCLFT+niId7cg==",
+  "dgSpecHash": "iyT8sn/2ysuQPDSnsb78GlG9Fa9NjAGZFksXCkbV6i/Gpce3RpQ7dwco+trTmirzkEBhetSeqdjFyIQ1mSd+6Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
+  "projectFilePath": "C:\\Users\\Nahu\\Desktop\\Lab3Final\\Lab3Inmobiliaria\\.Net\\InmobiliariaAPI-Vargas\\InmobiliariaAPI-Vargas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nahu\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\Nahu\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

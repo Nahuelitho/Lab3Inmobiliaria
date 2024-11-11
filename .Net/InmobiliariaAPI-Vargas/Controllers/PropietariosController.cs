@@ -335,7 +335,7 @@ namespace InmobiliariaAPI_Vargas.Controllers
         }
 
 
-        //////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////RECUPERAR CLAVE CON CORREO//////////////////////////////////////////////
         [HttpPost("recuperarClave")]
         [AllowAnonymous]
         public async Task<IActionResult> RecuperarClave([FromForm] string email)
@@ -409,7 +409,7 @@ namespace InmobiliariaAPI_Vargas.Controllers
 
 
 
-        //////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////CONFIRMAR RECUPERAR CLAVE//////////////////////////////////////////
         [HttpPost("confirmarRestaurarClave")]
         [AllowAnonymous]
         public async Task<IActionResult> ConfirmarRestaurarClave([FromForm] string token)
