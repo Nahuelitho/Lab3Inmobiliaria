@@ -375,7 +375,8 @@ namespace InmobiliariaAPI_Vargas.Controllers
                 );
 
                 // Obtener el dominio o la IP
-                var dominio = _environment.IsDevelopment() ? HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString() : "www.misitio.com";
+                var dominio = _environment.IsDevelopment() ? "192.168.1.106" : "www.misitio.com";
+
 
                 var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 

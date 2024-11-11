@@ -64,5 +64,17 @@ public class Pago implements Serializable {
     public void setDetalle(String detalle) {
         this.detalle = detalle;
     }
+
+    @Override
+    public String toString() {
+        return "Pago{" +
+                "id=" + id +
+                ", numeroPago=" + numeroPago +
+                ", idContrato=" + idContrato +
+                ", fechaPago='" + fechaPago + '\'' +
+                ", importe=" + importe +
+                ", detalle='" + detalle + '\'' +
+                '}';
+    }
 }
 

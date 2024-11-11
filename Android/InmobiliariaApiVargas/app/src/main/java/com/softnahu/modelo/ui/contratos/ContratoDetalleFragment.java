@@ -45,7 +45,7 @@ public class ContratoDetalleFragment extends Fragment {
             if (inmueble != null && contrato != null) {
                 Log.d("ContratoDetalle", "Inmueble recibido: " + inmueble.getDireccion());
                 Log.d("ContratoDetalle", "Contrato recibido con ID: " + contrato.getId());
-
+                Log.d("ContratoDetalle", "Contrato recibido pago: " + contrato.getPagos());
                 // Pasar ambos al ViewModel
                 mViewModel.recibeContrato(contrato, inmueble);
             } else {
@@ -79,13 +79,17 @@ public class ContratoDetalleFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         Contrato contrato = mViewModel.getmContrato().getValue();
-                        Log.d("Pago", contrato.getFechaInicio());
-                        Log.d("Pago", contrato.getPagos().get(0).getImporte()+"");
-                        Bundle bundle = new Bundle();
-                         bundle = getArguments();
-                        Navigation.findNavController(view).navigate(R.id.pagosFragment, bundle);
+                            Log.d("Pago", "Fecha de inicio del contrato: " + contrato.getFechaInicio());
+                            Log.d("Pago", "Importe del primer pago: " + contrato.getPagos().get(0).getImporte());
+                            // Pasar datos a PagosFragment
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("contrato", contrato);
+                            Navigation.findNavController(view).navigate(R.id.fragment_pagos, bundle);
+
                     }
                 });
+
+
             }
         });
 

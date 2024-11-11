@@ -82,5 +82,6 @@ public class InmuebleAdapter extends RecyclerView.Adapter<InmuebleAdapter.ViewHo
             tvInfo = itemView.findViewById(R.id.tvPrecio);
             ivFoto = itemView.findViewById(R.id.ivFoto);
         }
+
     }
 }

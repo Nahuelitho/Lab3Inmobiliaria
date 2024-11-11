@@ -102,11 +102,11 @@
             app:destination="@id/nav_contrato" />
         <action
             android:id="@+id/action_detalle_contrato_to_pagosFragment"
-            app:destination="@id/pagosFragment" />
+            app:destination="@id/fragment_pagos" />
     </fragment>
 
     <fragment
-        android:id="@+id/pagosFragment"
+        android:id="@+id/fragment_pagos"
         android:name="com.softnahu.modelo.ui.pago.PagosFragment"
         android:label="Detalle del Pago"
         tools:layout="@layout/fragment_pagos">

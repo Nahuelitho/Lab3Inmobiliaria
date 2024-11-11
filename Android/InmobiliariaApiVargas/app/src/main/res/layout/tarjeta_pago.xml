@@ -22,14 +22,6 @@
             android:layout_marginBottom="4dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Código de pago:"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp"/>
-
-            <TextView
                 android:id="@+id/tvCodigoPago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,13 +36,6 @@
             android:orientation="horizontal"
             android:layout_marginBottom="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Número de pago:"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvNumeroPago"
@@ -68,14 +53,6 @@
             android:layout_marginBottom="4dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Código de contrato:"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp"/>
-
-            <TextView
                 android:id="@+id/tvCodigoContrato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -90,13 +67,6 @@
             android:orientation="horizontal"
             android:layout_marginBottom="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Importe:"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvImporte"
@@ -113,13 +83,6 @@
             android:orientation="horizontal"
             android:layout_marginBottom="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fecha de pago:"
-                android:textSize="16sp"
-                android:textColor="@android:color/white"
-                android:layout_marginEnd="8dp"/>
 
             <TextView
                 android:id="@+id/tvFechaPago"

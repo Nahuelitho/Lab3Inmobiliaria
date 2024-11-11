@@ -56,6 +56,8 @@ public class ContratosAdapter extends RecyclerView.Adapter<ContratosAdapter.View
         Inmueble inmueble = listaInmueblesXPropietario.get(position);
         contratos = inmueble.getContratos();
 
+
+
         if (contratos != null && !contratos.isEmpty()) {
             Contrato contrato = contratos.get(0);
 
