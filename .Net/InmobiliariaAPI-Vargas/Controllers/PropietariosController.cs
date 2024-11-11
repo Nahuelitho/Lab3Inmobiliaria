@@ -57,6 +57,7 @@ namespace InmobiliariaAPI_Vargas.Controllers
         }
         /////////////////////////////////Obtener propietario////////////////////////////////////////////
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<Propietario>> Get()
         {
             // Obtén el ID del propietario desde los claims del usuario logueado
