@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\cfdb2554-b097-45b5-996e-a764e6791201_avatarPerfil8194046324299352218.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\48c0081d-1aea-4f97-9b0c-48c699fb7419_avatarPerfil5566180377398031058.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>InmobiliariaAPI-Vargas</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/InmobiliariaAPI-Vargas</BasePath>
-      <RelativePath>avatarPerfil/cfdb2554-b097-45b5-996e-a764e6791201_avatarPerfil8194046324299352218.jpg</RelativePath>
+      <RelativePath>avatarPerfil/48c0081d-1aea-4f97-9b0c-48c699fb7419_avatarPerfil5566180377398031058.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,7 +14,55 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\cfdb2554-b097-45b5-996e-a764e6791201_avatarPerfil8194046324299352218.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\48c0081d-1aea-4f97-9b0c-48c699fb7419_avatarPerfil5566180377398031058.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\7a8855fc-0814-4e87-b591-e81b56a4f93b_avatarPerfil6351623786864397347.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>InmobiliariaAPI-Vargas</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/InmobiliariaAPI-Vargas</BasePath>
+      <RelativePath>avatarPerfil/7a8855fc-0814-4e87-b591-e81b56a4f93b_avatarPerfil6351623786864397347.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\7a8855fc-0814-4e87-b591-e81b56a4f93b_avatarPerfil6351623786864397347.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>InmobiliariaAPI-Vargas</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/InmobiliariaAPI-Vargas</BasePath>
+      <RelativePath>avatarPerfil/7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>InmobiliariaAPI-Vargas</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/InmobiliariaAPI-Vargas</BasePath>
+      <RelativePath>avatarPerfil/a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\avatarPerfil\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

@@ -1,8 +1,20 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3Final\\Lab3Inmobiliaria\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\cfdb2554-b097-45b5-996e-a764e6791201_avatarPerfil8194046324299352218.jpg",
-      "PackagePath": "staticwebassets\\avatarPerfil\\cfdb2554-b097-45b5-996e-a764e6791201_avatarPerfil8194046324299352218.jpg"
+      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\48c0081d-1aea-4f97-9b0c-48c699fb7419_avatarPerfil5566180377398031058.jpg",
+      "PackagePath": "staticwebassets\\avatarPerfil\\48c0081d-1aea-4f97-9b0c-48c699fb7419_avatarPerfil5566180377398031058.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\7a8855fc-0814-4e87-b591-e81b56a4f93b_avatarPerfil6351623786864397347.jpg",
+      "PackagePath": "staticwebassets\\avatarPerfil\\7a8855fc-0814-4e87-b591-e81b56a4f93b_avatarPerfil6351623786864397347.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg",
+      "PackagePath": "staticwebassets\\avatarPerfil\\7eaa61ee-c91a-418b-aa1a-4941fb21702f_avatarPerfil5044134221161233689.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Nahu\\Desktop\\Lab3\\.Net\\InmobiliariaAPI-Vargas\\wwwroot\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg",
+      "PackagePath": "staticwebassets\\avatarPerfil\\a812544e-7f61-44db-8d1c-f64ad9b3f49b_avatarPerfil8125063344725114710.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.InmobiliariaAPI-Vargas.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.softnahu.modelo.R;
 import com.softnahu.modelo.databinding.FragmentContratoDetalleBinding;
@@ -74,24 +73,15 @@ public class ContratoDetalleFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         Contrato contrato = mViewModel.getmContrato().getValue();
-
-                        if (contrato != null && contrato.getPagos() != null && !contrato.getPagos().isEmpty()) {
-                            // Si existe el contrato y tiene pagos, accede al primer pago
                             Log.d("Pago", "Fecha de inicio del contrato: " + contrato.getFechaInicio());
                             Log.d("Pago", "Importe del primer pago: " + contrato.getPagos().get(0).getImporte());
-
                             // Pasar datos a PagosFragment
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("contrato", contrato);
                             Navigation.findNavController(view).navigate(R.id.fragment_pagos, bundle);
-                        } else {
-                            // Muestra un mensaje o realiza una acción alternativa si no hay pagos
-                            Log.d("Pago", "No hay pagos disponibles para este contrato.");
-                            Toast.makeText(view.getContext(), "No hay pagos disponibles para este contrato.", Toast.LENGTH_SHORT).show();
-                        }
+
                     }
                 });
-
 
 
             }
