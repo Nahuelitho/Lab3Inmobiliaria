@@ -44,12 +44,10 @@ public class ContratosFragment extends Fragment {
 
         // Observa cambios en los datos
         contratosViewModel.getmInmueblesXContrato().observe(getViewLifecycleOwner(), inmuebles -> {
-            if (inmuebles != null) {
                 Log.d("RECYCLER_VIEW", "Inmuebles cargados en el RecyclerView: " + inmuebles.size());
                 adapter.updateList(inmuebles); // Usar updateList en lugar de crear un nuevo adaptador
-            } else {
                 Log.e("RECYCLER_VIEW_ERROR", "La lista de inmuebles es nula");
-            }
+
         });
 
 

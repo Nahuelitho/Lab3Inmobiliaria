@@ -82,11 +82,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         vmMain.getmPropietario().observe(this, propietario -> {
-            if (propietario != null) {
                 Log.d("Propietario_Data", "Propietario cargado: " + propietario.getNombre() + " " + propietario.getApellido());
-            } else {
-                Log.d("Propietario_Data", "Propietario es null");
-            }
         });
         vmMain.recuperarDatosPerfil();
 

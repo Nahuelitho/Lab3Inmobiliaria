@@ -30,7 +30,7 @@ public class DetalleItemFragment extends Fragment {
 
         // Observa los cambios en el inmueble seleccionado
         mViewModel.getMInmueble().observe(getViewLifecycleOwner(), inmueble -> {
-            if (inmueble != null) {
+
                 binding.tvDireccion.setText(inmueble.getDireccion());
                 binding.tvAmbientes.setText(String.valueOf(inmueble.getAmbientes()));
                 binding.tvTipoUso.setText(inmueble.getTipo());
@@ -50,7 +50,7 @@ public class DetalleItemFragment extends Fragment {
                 binding.switchDisponible.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     mViewModel.modificarInmuebleEstado();
                 });
-            }
+
         });
 
         // Pasa el argumento al ViewModel

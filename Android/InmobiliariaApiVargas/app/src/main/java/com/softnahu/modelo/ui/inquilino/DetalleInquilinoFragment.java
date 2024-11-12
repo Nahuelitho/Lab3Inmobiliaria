@@ -29,14 +29,14 @@ public class DetalleInquilinoFragment extends Fragment {
 
         // Observa los cambios en el inquilino seleccionado
         mViewModel.getMInquilino().observe(getViewLifecycleOwner(), inquilino -> {
-            if (inquilino != null) {
+
                 binding.tvDni.setText(String.valueOf(inquilino.getDni()));
                 binding.tvApellido.setText(inquilino.getApellido());
                 binding.tvNombre.setText(inquilino.getNombre());
                 binding.tvDireccion.setText(inquilino.getDireccion());
                 binding.tvTelefono.setText(String.valueOf(inquilino.getTelefono()));
 
-            }
+
         });
 
         // Pasa el argumento al ViewModel

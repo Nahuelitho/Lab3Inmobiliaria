@@ -39,11 +39,9 @@ public class PagosFragment extends Fragment {
         binding = FragmentPagosBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         Contrato contrato = (Contrato) getArguments().getSerializable("contrato");
-        if (contrato != null && contrato.getPagos() != null) {
+
             mViewModel.recuperarPagos(contrato);
-        } else {
-            Log.d("Pago", "No hay pagos para mostrar en el contrato recibido.");
-        }
+
 
         PagoAdapter pagoAdapter = new PagoAdapter(new ArrayList<>(), inflater,contrato.getId());
 
@@ -57,12 +55,8 @@ public class PagosFragment extends Fragment {
         mViewModel.getmPagos().observe(getViewLifecycleOwner(), new Observer<List<Pago>>() {
             @Override
             public void onChanged(List<Pago> pagos) {
-                if (pagos != null && !pagos.isEmpty()) {
                     Log.d("PagosFragment", "Cantidad de pagos recibidos: " + pagos.size());
                     pagoAdapter.updateList(pagos);
-                } else {
-                    Log.d("PagosFragment", "No hay pagos para mostrar.");
-                }
             }
         });
 

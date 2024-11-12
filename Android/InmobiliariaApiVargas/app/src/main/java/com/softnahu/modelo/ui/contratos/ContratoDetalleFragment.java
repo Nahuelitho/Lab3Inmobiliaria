@@ -38,26 +38,24 @@ public class ContratoDetalleFragment extends Fragment {
 
 
         // Pasar los argumentos al ViewModel antes de observar los cambios
-        if (getArguments() != null) {
+
             Inmueble inmueble = (Inmueble) getArguments().getSerializable("inmueble");
             Contrato contrato = (Contrato) getArguments().getSerializable("contrato");
 
-            if (inmueble != null && contrato != null) {
+
                 Log.d("ContratoDetalle", "Inmueble recibido: " + inmueble.getDireccion());
                 Log.d("ContratoDetalle", "Contrato recibido con ID: " + contrato.getId());
                 Log.d("ContratoDetalle", "Contrato recibido pago: " + contrato.getPagos());
                 // Pasar ambos al ViewModel
                 mViewModel.recibeContrato(contrato, inmueble);
-            } else {
-                Log.d("ContratoDetalle", "Datos no recibidos correctamente.");
-            }
-        }
+
+
 
         // Observa los cambios en el contrato y actualiza la interfaz
         mViewModel.getmContrato().observe(getViewLifecycleOwner(), new Observer<Contrato>() {
             @Override
             public void onChanged(Contrato contrato) {
-                if (contrato != null) {
+
                     // Formateo de fechas
                     String fechaInicioFormateada = formatFecha(contrato.getFechaInicio());
                     String fechaFinFormateada = formatFecha(contrato.getFechaFin());
@@ -69,12 +67,8 @@ public class ContratoDetalleFragment extends Fragment {
                     binding.tvMontoAlquiler.setText(String.valueOf(contrato.getPrecio()));
 
                     // Verifica si Inquilino no es null
-                    if (contrato.getInquilino() != null) {
-                        binding.tvInquilinoNombre.setText(contrato.getInquilino().getNombre() + " " + contrato.getInquilino().getApellido());
-                    } else {
-                        binding.tvInquilinoNombre.setText("Inquilino no disponible");
-                    }
-                }
+                    binding.tvInquilinoNombre.setText(contrato.getInquilino().getNombre() + " " + contrato.getInquilino().getApellido());
+
                 binding.btnPagos.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -96,13 +90,10 @@ public class ContratoDetalleFragment extends Fragment {
         mViewModel.getInmueble().observe(getViewLifecycleOwner(), new Observer<Inmueble>() {
             @Override
             public void onChanged(Inmueble inmueble) {
-                if (inmueble != null) {
-                    // Verifica si Inmueble no es null
-                    binding.tvInmuebleDireccion.setText(inmueble.getDireccion());
-                } else {
-                    binding.tvInmuebleDireccion.setText("Dirección no disponible");
-                }
+                // Verifica si Inmueble no es null
+                binding.tvInmuebleDireccion.setText(inmueble.getDireccion());
             }
+
         });
 
         return binding.getRoot();

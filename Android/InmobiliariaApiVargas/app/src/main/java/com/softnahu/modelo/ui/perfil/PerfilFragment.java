@@ -85,7 +85,6 @@ public class PerfilFragment extends Fragment {
 
     private void observarDatosPerfil() {
         mViewModel.getmPropietario().observe(getViewLifecycleOwner(), propietario -> {
-            if (propietario != null) {
                 // Actualizar la UI con los datos del propietario
                 binding.tvDni.setText("DNI: " + propietario.getDni());
                 binding.tvApellido.setText("Apellido: " + propietario.getApellido());
@@ -101,9 +100,6 @@ public class PerfilFragment extends Fragment {
                         .apply(RequestOptions.circleCropTransform())
                         .error(R.drawable.error)
                         .into(binding.ivAvatar);
-            } else {
-                Toast.makeText(getContext(), "No se pudo cargar el perfil", Toast.LENGTH_SHORT).show();
-            }
         });
 
         binding.btnEditar.setOnClickListener(v -> {
@@ -120,14 +116,12 @@ public class PerfilFragment extends Fragment {
         mViewModel.getMAvatar().observe(getViewLifecycleOwner(), new Observer<Uri>() {
             @Override
             public void onChanged(Uri uri) {
-                if (uri != null) {
                     // Usa Glide para cargar la imagen seleccionada en el ImageView
                     Glide.with(requireContext())
                             .load(uri)
                             .placeholder(R.drawable.defaultprofile) // Imagen de carga inicial
                             .error(R.drawable.error) // Imagen de error si falla la carga
                             .into(binding.ivAvatar);
-                }
             }
         });
     }
