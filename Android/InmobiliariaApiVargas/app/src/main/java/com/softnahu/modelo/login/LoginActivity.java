@@ -1,5 +1,9 @@
 package com.softnahu.modelo.login;
 
+import static android.Manifest.permission.CALL_PHONE;
+
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -47,8 +51,22 @@ public class LoginActivity extends AppCompatActivity {
                 vm.llamarRestaurarClave(binding.etUsuario.getText().toString());
             }
         });
+        solicitarPermisos();
+        vm.obtenerLecturas();
 
 
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        vm.pararLecturas();
+    }
 
+    private void solicitarPermisos() {
+        if((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                && (checkSelfPermission(CALL_PHONE)
+                != PackageManager.PERMISSION_GRANTED)){
+            requestPermissions(new String[]{CALL_PHONE},1000);
+        }
     }
 }
